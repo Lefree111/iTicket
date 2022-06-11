@@ -1,0 +1,10 @@
+************* iTicket **************
+
+
+1. Profile
+    id,name,surname,phone,email,role,status;
+2.attch
+    id(uuid),origin_name,size,type (extension),path
+3. Category
+    id,name,created_date
+4.
