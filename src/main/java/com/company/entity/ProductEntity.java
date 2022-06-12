@@ -6,7 +6,9 @@ import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Getter
 @Setter
@@ -39,7 +41,7 @@ public class ProductEntity {
     @Column
     private Double to_amount;
     @Column
-    private LocalDateTime durationDate;
+    private LocalDate durationDate;
     @Column
     private String description;
 

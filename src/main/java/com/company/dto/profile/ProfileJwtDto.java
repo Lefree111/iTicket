@@ -14,7 +14,7 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 public class ProfileJwtDto {
     @NotNull(message = "Id null ku mazgi")
-    private Integer id;
+    private String id;
     @NotNull(message = "role null ku mazgi")
     private ProfileRole role;
 }

@@ -1,0 +1,35 @@
+POST http://localhost:8090/api/v1/profile/create
+Content-Type: application/json
+
+{
+  "name" : "Sarvar",
+  "surname" : "Holmatov",
+  "email" : "sarvargo@gmail.com",
+  "password" : "1234567898765432",
+  "phone": "+998909009090",
+  "country": "AQSH"
+}
+
+###
+GET http://localhost:8090/api/v1/profile/pagination
+Content-Type: application/json
+
+
+
+###
+PUT http://localhost:8090/api/v1/profile/update/8a8a839581548139018154857daf0000
+Content-Type: application/json
+
+{
+  "name" : "Sarvar",
+  "surname" : "Holmatov",
+  "email" : "sarvargo@gmail.com",
+  "password" : "1234567898765432",
+  "phone": "+998909009090",
+  "country": "AQSH"
+}
+
+
+###
+DELETE http://localhost:8090/api/v1/profile/delete/8a8a8395815496460181549715000001
+Content-Type: application/json

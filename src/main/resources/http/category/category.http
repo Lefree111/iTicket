@@ -1,0 +1,28 @@
+POST http://localhost:8090/api/v1/category/create
+Content-Type: application/json
+
+{
+  "key" : "category_2",
+  "nameUz" : "Iqtisodiyot",
+  "nameRu" : "Экономика",
+  "nameEn" : "Economics"
+}
+
+###
+GET http://localhost:8090/api/v1/category/getById/8a8a83958152db97018152e6b6050002
+Content-Type: application/json
+
+###
+PUT http://localhost:8090/api/v1/category/update/8a8a83958152db97018152e6b6050002
+Content-Type: application/json
+
+{
+  "key" : "qwertyuil",
+  "nameUz" : "dfg",
+  "nameRu" : "dfgh",
+  "nameEn" : "dfg"
+}
+
+###
+DELETE http://localhost:8090/api/v1/category/delete/8a8a839581548139018154871ccf0001
+Content-Type: application/json

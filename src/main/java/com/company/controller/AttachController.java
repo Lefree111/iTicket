@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 @RestController
-@RequestMapping("/attach")
+@RequestMapping("/api/v1/attach")
 public class AttachController {
 
     private final AttachService attachService;

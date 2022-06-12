@@ -7,6 +7,8 @@ import com.company.exc.ItemNotFoundException;
 import com.company.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.time.LocalDateTime;
 import java.util.Optional;
 
 @Service
@@ -20,10 +22,6 @@ public class ProductService {
     }
 
     public ProductDTO create(ProductDTO dto){
-        Optional<ProductEntity> check = productRepository.findByName(dto.getName());
-        if (check.isPresent()){
-            throw new ItemNotFoundException("Name not found");
-        }
 
         ProductEntity entity = new ProductEntity();
         entity.setName(dto.getName());
@@ -34,8 +32,8 @@ public class ProductService {
         entity.setDurationDate(dto.getDurationDate());
         entity.setTo_amount(dto.getTo_amount());
         entity.setFrom_amount(dto.getFrom_amount());
-        entity.setPublishedDate(dto.getPublishedDate());
-        entity.setCreateDate(dto.getCreateDate());
+        entity.setPublishedDate(LocalDateTime.now());
+        entity.setCreateDate(LocalDateTime.now());
 
         entity.setStatus(ProductStatus.ACTIVE);
         productRepository.save(entity);
@@ -44,7 +42,7 @@ public class ProductService {
     }
 
     public ProductDTO update(ProductDTO dto){
-        Optional<ProductEntity> check = productRepository.findByName(dto.getName());
+        Optional<ProductEntity> check = productRepository.findById(dto.getId());
         if (check.isPresent()){
             throw new ItemNotFoundException("Name not found");
         }
@@ -58,8 +56,8 @@ public class ProductService {
         entity.setDurationDate(dto.getDurationDate());
         entity.setTo_amount(dto.getTo_amount());
         entity.setFrom_amount(dto.getFrom_amount());
-        entity.setPublishedDate(dto.getPublishedDate());
-        entity.setCreateDate(dto.getCreateDate());
+        entity.setPublishedDate(LocalDateTime.now());
+        entity.setCreateDate(LocalDateTime.now());
         productRepository.save(entity);
         return toDTO(entity);
     }

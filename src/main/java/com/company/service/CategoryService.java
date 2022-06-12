@@ -76,6 +76,9 @@ public class CategoryService {
         CategoryDTO dto = new CategoryDTO();
         dto.setId(entity.getId());
         dto.setKey(entity.getKey());
+        dto.setName_en(entity.getName_en());
+        dto.setName_ru(entity.getName_ru());
+        dto.setName_uz(entity.getName_uz());
         dto.setCreateDate(entity.getCreateDate());
         dto.setUpdateDate(entity.getUpdateDate());
         return dto;

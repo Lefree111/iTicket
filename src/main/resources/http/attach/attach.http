@@ -1,0 +1,30 @@
+POST http://localhost:8090/api/v1/attach/upload
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="file"; filename="gold.jpg"
+
+< C:\Users\ACER\Desktop\rasm\gold.jpg
+--WebAppBoundary--
+
+###
+
+GET http://localhost:8090/api/v1/attach/open/f1707e57-5b92-4f53-86d7-5a83c432165e
+Content-Type: application/json
+
+###
+GET http://localhost:8090/api/v1/attach/open_general/8d160025-b96b-45ac-8fc4-29c7cee3d950
+Content-Type: application/json
+
+###
+GET http://localhost:8090/api/v1/attach/download/8d160025-b96b-45ac-8fc4-29c7cee3d950
+Content-Type: application/json
+
+###
+GET http://localhost:8090/api/v1/attach/list
+Content-Type: application/json
+
+
+###
+DELETE http://localhost:8090/api/v1/attach/delete/8d160025-b96b-45ac-8fc4-29c7cee3d950
+Content-Type: application/json

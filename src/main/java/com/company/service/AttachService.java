@@ -27,6 +27,7 @@ import java.net.MalformedURLException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -140,6 +141,7 @@ public class AttachService {
         entity.setOriginName(file.getOriginalFilename());
         entity.setExtension(extension);
         entity.setSize(file.getSize());
+        entity.setCreateDate(LocalDateTime.now());
         attachRepository.save(entity);
         return entity;
     }
@@ -150,7 +152,7 @@ public class AttachService {
         dto.setCreateDate(entity.getCreateDate());
         dto.setOriginName(entity.getOriginName());
         dto.setPath(entity.getPath());
-        dto.setUrl(domainName + "/attach/download/" + entity.getId());
+        dto.setUrl(domainName + "api/v1/attach/download/" + entity.getId());
         return dto;
     }
 
@@ -163,12 +165,12 @@ public class AttachService {
         if (file.delete()) {
             attachRepository.deleteById(key);
             return true;
-        } else throw new AppBadRequestException("Could not read the file!");
-
+        } else
+            throw new AppBadRequestException("Could not read the file!");
     }
 
     public List<AttachDTO> paginationList(int page, int size) {
-        Pageable pageable = PageRequest.of(page, size, Sort.by(Sort.Direction.DESC, "createdDate"));
+        Pageable pageable = PageRequest.of(page, size, Sort.by(Sort.Direction.DESC, "createDate"));
 
         List<AttachDTO> dtoList = new ArrayList<>();
         attachRepository.findAll(pageable).stream().forEach(entity -> {
