@@ -5,6 +5,7 @@ import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 @Getter
 @Setter
@@ -20,9 +21,9 @@ public class InformationEntity {
     @Column
     private String language;
     @Column
-    private LocalDateTime duration;
+    private String duration;
     @Column
-    private LocalDateTime back_date;
+    private String back_date;
 
     @Column(name = "product_id")
     private String product_id;

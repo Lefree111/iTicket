@@ -1,5 +1,6 @@
 package com.company.service;
 
+
 import com.company.dto.product.InformationDTO;
 import com.company.entity.InformationEntity;
 import com.company.exc.ItemNotFoundException;
@@ -25,8 +26,8 @@ public class InformationService {
         InformationEntity entity = new InformationEntity();
         entity.setAge_limit(dto.getAge_limit());
         entity.setLanguage(dto.getLanguage());
-        entity.setDuration(dto.getDuration());
         entity.setBack_date(dto.getBack_date_ticket());
+        entity.setDuration(dto.getDuration());
         entity.setProduct_id(dto.getProduct_id());
         entity.setCreateDate(LocalDateTime.now());
         informationRepository.save(entity);

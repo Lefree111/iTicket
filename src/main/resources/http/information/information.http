@@ -1,0 +1,13 @@
+###
+POST http://localhost:8090/api/v1/information/create
+Content-Type: application/json
+
+{
+  "age_limit": "12",
+  "language": "uzbek",
+  "duration": "01.07.2022",
+  "back_date_ticket": "20.07.2022",
+  "product_id": "8a8a8395815565510181556ab1770000"
+}
+
+
