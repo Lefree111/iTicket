@@ -11,3 +11,35 @@ Content-Type: application/json
 }
 
 
+###
+POST http://localhost:8090/api/v1/information/update/4028ab35815878f001815879b4010000
+Content-Type: application/json
+
+{
+  "age_limit": "14",
+  "language": "Rus",
+  "duration": "01.08.2022",
+  "back_date_ticket": "18.07.2022",
+  "product_id": "8a8a8395815565510181556ab1770000"
+}
+
+<> 2022-06-12T201444.200.json
+
+
+###
+GET http://localhost:8090/api/v1/information/getById/8a8a8395815782090181578240720000
+Content-Type: application/json
+
+<> 2022-06-12T201948.200.json
+
+
+###
+DELETE http://localhost:8090/api/v1/information/delete/8a8a8395815782090181578240720000
+Content-Type: application/json
+
+<> 2022-06-12T202024.200.txt
+
+
+
+
+

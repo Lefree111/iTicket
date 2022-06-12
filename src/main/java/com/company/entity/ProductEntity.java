@@ -24,7 +24,7 @@ public class ProductEntity {
 
     @Column(name = "attach_id")
     private String attach_id;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "attach_id",insertable = false,updatable = false)
     private AttachEntity attach;
 

@@ -29,7 +29,7 @@ public class InformationController {
 
     @GetMapping("/getById/{id}")
     public ResponseEntity<?> getById(@PathVariable("id") String id) {
-        return ResponseEntity.ok(informationService.get(id));
+        return ResponseEntity.ok(informationService.getById(id));
     }
 
     @DeleteMapping("/delete/{id}")
