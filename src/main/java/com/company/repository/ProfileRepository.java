@@ -1,6 +1,7 @@
 package com.company.repository;
 
 import com.company.entity.ProfileEntity;
+import com.company.enums.profile.ProfileStatus;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -20,6 +21,12 @@ public interface ProfileRepository extends JpaRepository<ProfileEntity, String> 
     int delete(@Param("visible") boolean b, @Param("id") String id);
 
     Optional<ProfileEntity> findByEmailAndPassword(String email, String password);
+
+    @Transactional
+    @Modifying
+    @Query("update ProfileEntity set status = :status where id = :id")
+    int updateStatus(@Param("status") ProfileStatus status, @Param("id") String id);
+
 
 
 }

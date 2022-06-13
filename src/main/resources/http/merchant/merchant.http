@@ -3,9 +3,8 @@ POST http://localhost:8090/api/v1/merchant/create
 Content-Type: application/json
 
 {
-  "product_id": "8a8a83958155721d0181557249000000",
-  "attachId": "2d6053ee-54aa-4884-94ca-64f3d2a9de00",
-  "address": "Humo arena",
+  "attachId": "d698322e-36f5-478e-8ef9-db22e28658e4",
+  "address": "Ashxabot parki",
   "phone": "+998330041155"
 }
 
@@ -15,11 +14,10 @@ Content-Type: application/json
 
 
 ###
-PUT http://localhost:8090/api/v1/merchant/update/8a8a83d2815b8b5501815b90f8f40000
+PUT http://localhost:8090/api/v1/merchant/update/
 Content-Type: application/json
 
 {
-  "product_id": "8a8a83958155707c01815571623e0000",
   "phone": "+998905457309",
   "attachId": "2d6053ee-54aa-4884-94ca-64f3d2a9de00"
 }
@@ -28,7 +26,7 @@ Content-Type: application/json
 
 
 ###
-GET http://localhost:8090/api/v1/merchant/getById/8a8a83d2815b959901815b95ab740000
+GET http://localhost:8090/api/v1/merchant/getById/
 Content-Type: application/json
 
 <> 2022-06-13T104235.200.json
@@ -36,14 +34,14 @@ Content-Type: application/json
 
 
 ###
-GET http://localhost:8090/api/v1/merchant/getByAddress/Shox saroy
+GET http://localhost:8090/api/v1/merchant/getByAddress/Humo arena
 Content-Type: application/json
 
 <> 2022-06-13T104256.200.json
 
 
 ###
-DELETE http://localhost:8090/api/v1/merchant/delete/8a8a83d2815b959901815b95ab740000
+DELETE http://localhost:8090/api/v1/merchant/delete/
 Content-Type: application/json
 
 <> 2022-06-13T104312.200.txt

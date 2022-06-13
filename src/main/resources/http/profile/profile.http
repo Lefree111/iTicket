@@ -2,12 +2,12 @@ POST http://localhost:8090/api/v1/profile/create
 Content-Type: application/json
 
 {
-  "name" : "Sarvar",
-  "surname" : "Holmatov",
-  "email" : "sarvargo@gmail.com",
-  "password" : "1234567898765432",
-  "phone": "+998909009090",
-  "country": "AQSH"
+  "name" : "Holmat",
+  "surname" : "Toshmatov",
+  "email" : "tosh@gmail.com",
+  "password" : "123432",
+  "phone": "+998901009090",
+  "country": "Ukraina"
 }
 
 ###

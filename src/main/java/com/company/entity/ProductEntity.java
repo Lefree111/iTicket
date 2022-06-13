@@ -34,18 +34,19 @@ public class ProductEntity {
     @JoinColumn(name = "category_id",insertable = false,updatable = false)
     private CategoryEntity category;
 
+
     @Column(name = "address_id")
-    private String merchant_id;
+    private String address_id;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "address_id",insertable = false,updatable = false)
-    private MerchantEntity merchant;
+    private MerchantEntity address;
 
     @Column
     private Double from_amount;
     @Column
     private Double to_amount;
     @Column
-    private LocalDate durationDate;
+    private String durationDate;
     @Column
     private String description;
 

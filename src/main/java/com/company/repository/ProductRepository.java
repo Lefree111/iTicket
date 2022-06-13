@@ -12,8 +12,6 @@ import java.util.Optional;
 
 public interface ProductRepository extends JpaRepository<ProductEntity,String> {
 
-    Optional<ProductEntity> findByName(String name);
-
 
     @Transactional
     @Modifying

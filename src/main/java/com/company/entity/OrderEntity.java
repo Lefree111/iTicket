@@ -22,7 +22,7 @@ public class OrderEntity {
     private ProfileEntity profile;
 
     @Column(name = "product_id")
-    private String productId;
+    private String product_id;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "product_id",insertable = false,updatable = false)
     private ProductEntity product;

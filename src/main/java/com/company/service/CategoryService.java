@@ -5,6 +5,7 @@ import com.company.entity.CategoryEntity;
 import com.company.exc.CategoryAlredyExistsException;
 import com.company.exc.ItemNotFoundException;
 import com.company.repository.CategoryRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -15,6 +16,7 @@ public class CategoryService {
 
     private final CategoryRepository categoryRepository;
 
+    @Autowired
     public CategoryService(CategoryRepository categoryRepository) {
         this.categoryRepository = categoryRepository;
     }

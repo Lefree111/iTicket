@@ -25,23 +25,36 @@ public class JWTUtil {
         return jwt;
     }
 
-    public static String getIdFromHeader(HttpServletRequest request, ProfileRole... requiredRole) {
-
-
+    public static String getIdFromHeader(HttpServletRequest request, ProfileRole... requiredRoles) {
         try {
-            ProfileJwtDto jwtDTO = (ProfileJwtDto) request.getAttribute("profileJwtDTO");
-            if (requiredRole == null || requiredRole.length == 0) {
-                return jwtDTO.getId();
+            ProfileJwtDto dto = (ProfileJwtDto) request.getAttribute("profileJwtDto");
+            if (requiredRoles == null || requiredRoles.length == 0) {
+                return dto.getId();
             }
-            for (ProfileRole role : requiredRole) {
-                if (role.equals(jwtDTO.getRole())) {
-                    return jwtDTO.getId();
+            for (ProfileRole role : requiredRoles) {
+                if (role.equals(dto.getRole())) {
+                    return dto.getId();
                 }
             }
-            throw new AppForbiddenException("Not Access");
-
         } catch (RuntimeException e) {
             throw new TokenNotValidException("Not Authorized");
         }
+        throw new AppForbiddenException("Not Access");
     }
+
+    public static ProfileJwtDto decode(String jwt) {
+        JwtParser jwtParser = Jwts.parser();
+
+        jwtParser.setSigningKey(secretKey);
+        Jws<Claims> jws = jwtParser.parseClaimsJws(jwt);
+
+        Claims claims = jws.getBody();
+        String id = claims.getSubject();
+        String role = String.valueOf(claims.get("role"));
+
+        return new ProfileJwtDto(id, ProfileRole.valueOf(role));
+    }
+
+
+
 }

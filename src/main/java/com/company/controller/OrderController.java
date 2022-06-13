@@ -17,22 +17,19 @@ public class OrderController {
     private OrderService orderService;
 
     @PostMapping("/create")
-    public ResponseEntity<?> create(@RequestBody OrderDTO dto, HttpServletRequest request) {
-        dto.setProfileId(JWTUtil.getIdFromHeader(request));
+    public ResponseEntity<?> create(@RequestBody OrderDTO dto) {
         return ResponseEntity.ok(orderService.create(dto));
     }
 
     @GetMapping("/getList")
-    public ResponseEntity<?> getList(@RequestParam(value = "page", defaultValue = "0") int size,
-                                     @RequestParam(value = "page", defaultValue = "0") int page,
-                                     HttpServletRequest request){
-        JWTUtil.getIdFromHeader(request, ProfileRole.ADMIN);
+    public ResponseEntity<?> getList(@RequestParam(value = "page", defaultValue = "0") int page,
+                                     @RequestParam(value = "size", defaultValue = "5") int size){
         return ResponseEntity.ok(orderService.getList(page, size));
     }
 
     @GetMapping("/getProfileOrderList")
-    public ResponseEntity<?> getProfileOrderList(@RequestParam(value = "page", defaultValue = "0") int size,
-                                                 @RequestParam(value = "page", defaultValue = "0") int page,
+    public ResponseEntity<?> getProfileOrderList(@RequestParam(value = "page", defaultValue = "0") int page,
+                                                 @RequestParam(value = "size", defaultValue = "5") int size,
                                                  HttpServletRequest request){
         String profileId = JWTUtil.getIdFromHeader(request, ProfileRole.USER);
         return ResponseEntity.ok(orderService.getProfileOrderList(profileId, page, size));

@@ -22,12 +22,6 @@ public class MerchantEntity {
     @JoinColumn(name = "attach_id",insertable = false,updatable = false)
     private AttachEntity attach;
 
-    @Column(name = "product_id")
-    private String product_id;
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "product_id",insertable = false,updatable = false)
-    private ProductEntity product;
-
     @Column
     private String address;
     @Column

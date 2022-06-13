@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -22,11 +23,11 @@ public class OrderService {
     private final ProductService productService;
 
     public OrderDTO create(OrderDTO dto) {
-        productService.getById(dto.getPrdouctId());
+//        productService.get(dto.getPrdouctId());
 
         OrderEntity entity = new OrderEntity();
         entity.setProfileId(dto.getProfileId());
-        entity.setProductId(dto.getPrdouctId());
+        entity.setProduct_id(dto.getProduct_id());
         entity.setCreatedDate(LocalDateTime.now());
 
         orderRepository.save(entity);
@@ -35,7 +36,7 @@ public class OrderService {
     }
 
     public List<OrderDTO> getList(int page, int size) {
-        Pageable pageable = PageRequest.of(page, size);
+        Pageable pageable = PageRequest.of(page, size, Sort.by(Sort.Direction.DESC, "createdDate"));
 
         Page<OrderEntity> orderEntitieList = orderRepository.findAll(pageable);
 
@@ -50,7 +51,7 @@ public class OrderService {
     }
 
     public List<OrderDTO> getProfileOrderList(String profileId, int page, int size) {
-        Pageable pageable = PageRequest.of(page, size);
+        Pageable pageable = PageRequest.of(page, size, Sort.by(Sort.Direction.DESC, "createdDate"));
 
         Page<OrderEntity> orderEntitieList = orderRepository.findAllByProfileId(profileId, pageable);
 
@@ -67,7 +68,7 @@ public class OrderService {
     public OrderDTO toDTO(OrderEntity entity) {
         OrderDTO dto = new OrderDTO();
         dto.setProfileId(entity.getProfileId());
-        dto.setPrdouctId(entity.getProductId());
+        dto.setProduct_id(entity.getProduct_id());
         dto.setVisible(entity.getVisible());
         dto.setCreatedDate(entity.getCreatedDate());
         return dto;

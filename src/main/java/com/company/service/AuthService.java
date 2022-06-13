@@ -3,15 +3,20 @@ package com.company.service;
 import com.company.dto.auth.AuthDTO;
 import com.company.dto.profile.ProfileDTO;
 import com.company.dto.profile.RegistrationDTO;
+import com.company.entity.AttachEntity;
 import com.company.entity.ProfileEntity;
 import com.company.enums.profile.ProfileRole;
 import com.company.enums.profile.ProfileStatus;
+import com.company.exc.AppBadRequestException;
+import com.company.exc.AppForbiddenException;
 import com.company.exc.EmailAlreadyExistsExeption;
 import com.company.exc.PasswordOrEmailWrongException;
 import com.company.repository.ProfileRepository;
 import com.company.util.JWTUtil;
+import io.jsonwebtoken.JwtException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.DigestUtils;
 
 import java.util.Optional;
 
@@ -48,14 +53,17 @@ public class AuthService {
         if (optional.isEmpty()) {
             throw new PasswordOrEmailWrongException("Password or email wrong!");
         }
-        //TODO BU JOYDA TOKEN BERILAYOTGAN PROFILENI DANNILAR BERILADI
+
         ProfileEntity entity = optional.get();
+        if (!entity.getStatus().equals(ProfileStatus.ACTIVE)) {
+            throw new AppForbiddenException("No Access bratishka.");
+        }
+
         ProfileDTO profile = new ProfileDTO();
-        profile.setName(entity.getName());
-        profile.setSurname(entity.getSurname());
         profile.setEmail(entity.getEmail());
-        profile.setRole(entity.getRole());
+        profile.setPassword(entity.getPassword());
         profile.setJwt(JWTUtil.encode(entity.getId(), entity.getRole()));
         return profile;
     }
+
 }

@@ -29,7 +29,6 @@ public class MerchantService {
         entity.setAttach_id(dto.getAttachId());
         entity.setAddress(dto.getAddress());
         entity.setPhone(dto.getPhone());
-        entity.setProduct_id(dto.getProduct_id());
         entity.setCreateDate(LocalDateTime.now());
         merchantRepository.save(entity);
         return toDTO(entity);
@@ -40,7 +39,6 @@ public class MerchantService {
             throw new ItemNotFoundException("Id not found");
         });
 
-        entity.setProduct_id(dto.getProduct_id());
         entity.setPhone(dto.getPhone());
         entity.setAttach_id(dto.getAttachId());
         merchantRepository.save(entity);
@@ -74,7 +72,6 @@ public class MerchantService {
         dto.setId(entity.getId());
         dto.setAttachId(entity.getAttach_id());
         dto.setPhone(entity.getPhone());
-        dto.setProduct_id(entity.getProduct_id());
         dto.setAddress(entity.getAddress());
         dto.setCreateDate(entity.getCreateDate());
         return dto;

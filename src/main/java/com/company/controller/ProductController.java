@@ -1,6 +1,7 @@
 package com.company.controller;
 
 import com.company.dto.product.ProductDTO;
+import com.company.enums.product.ProductStatus;
 import com.company.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,17 +19,29 @@ public class ProductController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<?> create(@RequestBody ProductDTO dto){
+    public ResponseEntity<?> create(@RequestBody ProductDTO dto) {
         return ResponseEntity.ok(productService.create(dto));
     }
 
-
-    @GetMapping("/pagination")
-    public ResponseEntity<?> get(@RequestParam(value = "page", defaultValue = "0")int page,
-                                 @RequestParam(value = "size", defaultValue = "4")int size){
-        return ResponseEntity.ok(productService.getList(page,size));
+    @PutMapping("/update/{id}")
+    public ResponseEntity<?> update(@RequestBody ProductDTO dto, @PathVariable("id") String id) {
+        return ResponseEntity.ok(productService.update(dto, id));
     }
 
+    @GetMapping("/getById/{id}")
+    public ResponseEntity<?> getById(@PathVariable("id") String id) {
+        return ResponseEntity.ok(productService.getById(id));
+    }
 
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<?> delete(@PathVariable("id") String id) {
+        return ResponseEntity.ok(productService.delete(id));
+    }
+
+    @GetMapping("/pagination")
+    public ResponseEntity<?> get(@RequestParam(value = "page", defaultValue = "0") int page,
+                                 @RequestParam(value = "size", defaultValue = "4") int size) {
+        return ResponseEntity.ok(productService.getList(page, size));
+    }
 
 }

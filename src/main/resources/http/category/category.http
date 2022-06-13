@@ -2,10 +2,10 @@ POST http://localhost:8090/api/v1/category/create
 Content-Type: application/json
 
 {
-  "key" : "category_2",
-  "nameUz" : "Iqtisodiyot",
-  "nameRu" : "Экономика",
-  "nameEn" : "Economics"
+  "key" : "ertyuio",
+  "name_uz" : "dfghjkl;",
+  "name_ru" : "dfghjk",
+  "name_en" : "xcvbnm,."
 }
 
 ###
@@ -18,9 +18,9 @@ Content-Type: application/json
 
 {
   "key" : "qwertyuil",
-  "nameUz" : "dfg",
-  "nameRu" : "dfgh",
-  "nameEn" : "dfg"
+  "name_uz" : "Iqtisodiyot",
+  "name_ru" : "Экономика",
+  "name_en" : "Economics"
 }
 
 ###

@@ -21,15 +21,16 @@ public class ProductDTO {
     @NotNull(message = "attach_id qani ??")
     private String attach_id;
     @NotNull(message = "cattegory_id qani ??")
-    private String cattegory_id;
+    private String category_id;
     @NotNull(message = "address qani ??")
-    private String merchant;
+    private String address_id;
     @NotNull(message = "from_amount qani ??")
     private Double from_amount;
     @NotNull(message = "to_amount qani ??")
     private Double to_amount;
     @NotNull(message = "durationDate qani ??")
-    private LocalDate durationDate;
+    private String durationDate;
+
     private String description;
     private ProductStatus status;
     private LocalDateTime publishedDate;

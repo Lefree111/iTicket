@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class OrderDTO {
     private String id;
-    private String prdouctId;
+    private String product_id;
     private String profileId;
     private Boolean visible;
     private LocalDateTime createdDate;

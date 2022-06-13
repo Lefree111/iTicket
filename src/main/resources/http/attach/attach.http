@@ -2,9 +2,9 @@ POST http://localhost:8090/api/v1/attach/upload
 Content-Type: multipart/form-data; boundary=WebAppBoundary
 
 --WebAppBoundary
-Content-Disposition: form-data; name="file"; filename="gold.jpg"
+Content-Disposition: form-data; name="file"; filename="hayot.jpg"
 
-< C:\Users\ACER\Desktop\rasm\gold.jpg
+< C:\Users\ACER\Desktop\rasm\hayot.jpg
 --WebAppBoundary--
 
 ###
