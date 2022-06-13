@@ -1,5 +1,6 @@
 package com.company.dto.product;
 
+import com.company.entity.MerchantEntity;
 import com.company.enums.product.ProductStatus;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;
@@ -22,7 +23,7 @@ public class ProductDTO {
     @NotNull(message = "cattegory_id qani ??")
     private String cattegory_id;
     @NotNull(message = "address qani ??")
-    private String address;
+    private String merchant;
     @NotNull(message = "from_amount qani ??")
     private Double from_amount;
     @NotNull(message = "to_amount qani ??")

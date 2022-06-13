@@ -1,14 +1,24 @@
 package com.company.service;
 
 import com.company.dto.product.ProductDTO;
+import com.company.dto.profile.ProfileDTO;
 import com.company.entity.ProductEntity;
+import com.company.entity.ProfileEntity;
 import com.company.enums.product.ProductStatus;
+import com.company.exc.AppBadRequestException;
 import com.company.exc.ItemNotFoundException;
 import com.company.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -27,7 +37,7 @@ public class ProductService {
         entity.setName(dto.getName());
         entity.setAttach_id(dto.getAttach_id());
         entity.setCategory_id(dto.getCattegory_id());
-        entity.setAddress(dto.getAddress());
+        entity.setMerchant_id(dto.getMerchant());
         entity.setDescription(dto.getDescription());
         entity.setDurationDate(dto.getDurationDate());
         entity.setTo_amount(dto.getTo_amount());
@@ -41,6 +51,21 @@ public class ProductService {
         return toDTO(entity);
     }
 
+    public List<ProductDTO> getList(int page, int size) {
+        Pageable pageable = PageRequest.of(page, size, Sort.by(Sort.Direction.DESC, "createDate"));
+
+        Page<ProductEntity> profileEntityList = productRepository.findAll(pageable);
+
+        List<ProductDTO> profileDTOList = new LinkedList<>();
+
+        profileEntityList.forEach(product -> {
+            if (product.getStatus().equals(ProductStatus.ACTIVE)){
+                profileDTOList.add(toDTO(product));
+            }
+        });
+        return profileDTOList;
+    }
+
     public ProductDTO update(ProductDTO dto){
         Optional<ProductEntity> check = productRepository.findById(dto.getId());
         if (check.isPresent()){
@@ -51,7 +76,7 @@ public class ProductService {
         entity.setName(dto.getName());
         entity.setAttach_id(dto.getAttach_id());
         entity.setCategory_id(dto.getCattegory_id());
-        entity.setAddress(dto.getAddress());
+        entity.setMerchant_id(dto.getMerchant());
         entity.setDescription(dto.getDescription());
         entity.setDurationDate(dto.getDurationDate());
         entity.setTo_amount(dto.getTo_amount());
@@ -67,7 +92,34 @@ public class ProductService {
         if (check.isPresent()){
             throw new ItemNotFoundException("Name not found");
         }
+        ProductEntity entity = check.get();
+        if (!entity.getStatus().equals(ProductStatus.ACTIVE)) {
+            throw new ItemNotFoundException("Status active emas");
+        }
         return toDTO(check.get());
+    }
+
+
+    public Boolean changeStatus(String id, ProductStatus status) {
+        ProductEntity entity = get(id);
+        try {
+            if (entity.getStatus().equals(status)) {
+                return false;
+            }
+            entity.setStatus(status);
+            return productRepository.updateStatus(status, id) > 0;
+
+        } catch (RuntimeException e) {
+            throw new AppBadRequestException("Status not valid!");
+        }
+    }
+
+
+
+    public ProductEntity get(String id) {
+        return productRepository.findById(id).orElseThrow(() -> {
+            throw new ItemNotFoundException("Article Not found");
+        });
     }
 
     public String delete(String id){
@@ -83,6 +135,7 @@ public class ProductService {
         ProductDTO dto = new ProductDTO();
         dto.setName(entity.getName());
         dto.setAttach_id(entity.getAttach_id());
+        dto.setMerchant(entity.getMerchant_id());
         dto.setDescription(entity.getDescription());
         dto.setCattegory_id(entity.getCategory_id());
         dto.setDurationDate(entity.getDurationDate());

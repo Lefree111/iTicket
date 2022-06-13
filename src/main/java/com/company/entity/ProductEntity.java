@@ -34,8 +34,12 @@ public class ProductEntity {
     @JoinColumn(name = "category_id",insertable = false,updatable = false)
     private CategoryEntity category;
 
-    @Column
-    private String address;
+    @Column(name = "address_id")
+    private String merchant_id;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "address_id",insertable = false,updatable = false)
+    private MerchantEntity merchant;
+
     @Column
     private Double from_amount;
     @Column
