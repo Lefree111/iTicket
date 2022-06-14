@@ -20,10 +20,8 @@ public class OrderService {
 
     private final OrderRepository orderRepository;
 
-    private final ProductService productService;
 
     public OrderDTO create(OrderDTO dto) {
-//        productService.get(dto.getPrdouctId());
 
         OrderEntity entity = new OrderEntity();
         entity.setProfileId(dto.getProfileId());
