@@ -1,34 +1,34 @@
 POST http://localhost:8090/api/v1/category/adm/create
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWRtdXNheWV2QGdtYWlsLmNvbSIsImlhdCI6MTY1NTQ0ODk3MiwiZXhwIjoxNjU1NDUyNTcyLCJpc3MiOiJpVGljZXQudXoiLCJyb2xlIjoiQURNSU4ifQ.6aL_fSRfkCMg_n-9RR7VlKooCmpkMO4JY56_u03KKhg
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWRtdXNheWV2QGdtYWlsLmNvbSIsImlhdCI6MTY1NTQ1OTU1MywiZXhwIjoxNjU1NDYzMTUzLCJpc3MiOiJpVGljZXQudXoiLCJyb2xlIjoiQURNSU4ifQ.6Z38yGLZ8Un7BcZ5sMyJV7rkDl1OYP3PwrgLAj7Z44A
 
 {
-  "key" : "ertyuioiutyred",
+  "key" : "salom",
   "name_uz" : "dfghjkl;",
   "name_ru" : "dfghjk",
   "name_en" : "xcvbnm,."
 }
 
 ###
-GET http://localhost:8090/api/v1/category/adm/getById/4028ab1c81707ceb0181707f63980001
+GET http://localhost:8090/api/v1/category/adm/getById/8a8a83d2817112330181711618e70001
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWRtdXNheWV2QGdtYWlsLmNvbSIsImlhdCI6MTY1NTQ0ODk3MiwiZXhwIjoxNjU1NDUyNTcyLCJpc3MiOiJpVGljZXQudXoiLCJyb2xlIjoiQURNSU4ifQ.6aL_fSRfkCMg_n-9RR7VlKooCmpkMO4JY56_u03KKhg
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWRtdXNheWV2QGdtYWlsLmNvbSIsImlhdCI6MTY1NTQ1OTU1MywiZXhwIjoxNjU1NDYzMTUzLCJpc3MiOiJpVGljZXQudXoiLCJyb2xlIjoiQURNSU4ifQ.6Z38yGLZ8Un7BcZ5sMyJV7rkDl1OYP3PwrgLAj7Z44A
 
 
 ###
-PUT http://localhost:8090/api/v1/category/adm/update/4028ab1c81707ceb0181707f63980001
+PUT http://localhost:8090/api/v1/category/adm/update/8a8a83d2817112330181711618e70001
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWRtdXNheWV2QGdtYWlsLmNvbSIsImlhdCI6MTY1NTQ0ODk3MiwiZXhwIjoxNjU1NDUyNTcyLCJpc3MiOiJpVGljZXQudXoiLCJyb2xlIjoiQURNSU4ifQ.6aL_fSRfkCMg_n-9RR7VlKooCmpkMO4JY56_u03KKhg
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWRtdXNheWV2QGdtYWlsLmNvbSIsImlhdCI6MTY1NTQ1OTU1MywiZXhwIjoxNjU1NDYzMTUzLCJpc3MiOiJpVGljZXQudXoiLCJyb2xlIjoiQURNSU4ifQ.6Z38yGLZ8Un7BcZ5sMyJV7rkDl1OYP3PwrgLAj7Z44A
 
 
 {
-  "key" : "edrftgyh",
+  "key" : "alik",
   "name_uz" : "Iqtisodiyot",
   "name_ru" : "Экономика",
   "name_en" : "Economics"
 }
 
 ###
-DELETE http://localhost:8090/api/v1/category/adm/delete/4028ab1c81707ceb0181707f63980001
+DELETE http://localhost:8090/api/v1/category/adm/delete/8a8a83d2817112330181711618e70001
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWRtdXNheWV2QGdtYWlsLmNvbSIsImlhdCI6MTY1NTQ0ODk3MiwiZXhwIjoxNjU1NDUyNTcyLCJpc3MiOiJpVGljZXQudXoiLCJyb2xlIjoiQURNSU4ifQ.6aL_fSRfkCMg_n-9RR7VlKooCmpkMO4JY56_u03KKhg
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWRtdXNheWV2QGdtYWlsLmNvbSIsImlhdCI6MTY1NTQ1OTU1MywiZXhwIjoxNjU1NDYzMTUzLCJpc3MiOiJpVGljZXQudXoiLCJyb2xlIjoiQURNSU4ifQ.6Z38yGLZ8Un7BcZ5sMyJV7rkDl1OYP3PwrgLAj7Z44A

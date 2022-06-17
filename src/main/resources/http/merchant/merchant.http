@@ -1,13 +1,13 @@
 ###
 POST http://localhost:8090/api/v1/merchant/adm/create
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWRtdXNheWV2QGdtYWlsLmNvbSIsImlhdCI6MTY1NTQ0ODk3MiwiZXhwIjoxNjU1NDUyNTcyLCJpc3MiOiJpVGljZXQudXoiLCJyb2xlIjoiQURNSU4ifQ.6aL_fSRfkCMg_n-9RR7VlKooCmpkMO4JY56_u03KKhg
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWRtdXNheWV2QGdtYWlsLmNvbSIsImlhdCI6MTY1NTQ1OTU1MywiZXhwIjoxNjU1NDYzMTUzLCJpc3MiOiJpVGljZXQudXoiLCJyb2xlIjoiQURNSU4ifQ.6Z38yGLZ8Un7BcZ5sMyJV7rkDl1OYP3PwrgLAj7Z44A
 
 
 {
-  "attachId": "afbf34bd-dac6-4942-89f6-777420affa42",
-  "address": "Humo arena",
-  "phone": "+998330041155"
+  "attachId": "5100756f-0573-450e-b207-98d22da8098b",
+  "address": "Ashxabor parki",
+  "phone": "+998905457309"
 }
 
 <> 2022-06-13T103716.200.json
@@ -16,22 +16,22 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWRtdXNheWV2QGdtYWlsLmNvb
 
 
 ###
-PUT http://localhost:8090/api/v1/merchant/adm/update/4028ab1c81707ceb0181707da1b00000
+PUT http://localhost:8090/api/v1/merchant/adm/update/8a8a83d281711be00181711e97260000
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWRtdXNheWV2QGdtYWlsLmNvbSIsImlhdCI6MTY1NTQ0ODk3MiwiZXhwIjoxNjU1NDUyNTcyLCJpc3MiOiJpVGljZXQudXoiLCJyb2xlIjoiQURNSU4ifQ.6aL_fSRfkCMg_n-9RR7VlKooCmpkMO4JY56_u03KKhg
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWRtdXNheWV2QGdtYWlsLmNvbSIsImlhdCI6MTY1NTQ1OTU1MywiZXhwIjoxNjU1NDYzMTUzLCJpc3MiOiJpVGljZXQudXoiLCJyb2xlIjoiQURNSU4ifQ.6Z38yGLZ8Un7BcZ5sMyJV7rkDl1OYP3PwrgLAj7Z44A
 
 {
   "phone": "+998905457309",
-  "attachId": "afbf34bd-dac6-4942-89f6-777420affa42"
+  "attachId": "5100756f-0573-450e-b207-98d22da8098b"
 }
 
 <> 2022-06-13T103906.200.json
 
 
 ###
-GET http://localhost:8090/api/v1/merchant/adm/4028ab1c81707ceb0181707da1b00000
+GET http://localhost:8090/api/v1/merchant/adm/8a8a83d281711be00181711e97260000
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWRtdXNheWV2QGdtYWlsLmNvbSIsImlhdCI6MTY1NTQ0ODk3MiwiZXhwIjoxNjU1NDUyNTcyLCJpc3MiOiJpVGljZXQudXoiLCJyb2xlIjoiQURNSU4ifQ.6aL_fSRfkCMg_n-9RR7VlKooCmpkMO4JY56_u03KKhg
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWRtdXNheWV2QGdtYWlsLmNvbSIsImlhdCI6MTY1NTQ1OTU1MywiZXhwIjoxNjU1NDYzMTUzLCJpc3MiOiJpVGljZXQudXoiLCJyb2xlIjoiQURNSU4ifQ.6Z38yGLZ8Un7BcZ5sMyJV7rkDl1OYP3PwrgLAj7Z44A
 
 
 <> 2022-06-13T104235.200.json
@@ -48,9 +48,9 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWRtdXNheWV2QGdtYWlsLmNvb
 
 
 ###
-DELETE http://localhost:8090/api/v1/merchant/adm/delete/4028ab1c81707ceb0181707da1b00000
+DELETE http://localhost:8090/api/v1/merchant/adm/delete/8a8a83d281711be00181711e97260000
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWRtdXNheWV2QGdtYWlsLmNvbSIsImlhdCI6MTY1NTQ0ODk3MiwiZXhwIjoxNjU1NDUyNTcyLCJpc3MiOiJpVGljZXQudXoiLCJyb2xlIjoiQURNSU4ifQ.6aL_fSRfkCMg_n-9RR7VlKooCmpkMO4JY56_u03KKhg
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWRtdXNheWV2QGdtYWlsLmNvbSIsImlhdCI6MTY1NTQ1OTU1MywiZXhwIjoxNjU1NDYzMTUzLCJpc3MiOiJpVGljZXQudXoiLCJyb2xlIjoiQURNSU4ifQ.6Z38yGLZ8Un7BcZ5sMyJV7rkDl1OYP3PwrgLAj7Z44A
 
 
 <> 2022-06-13T104312.200.txt

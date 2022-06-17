@@ -31,7 +31,7 @@ public class MerchantService {
         MerchantEntity entity = new MerchantEntity();
         entity.setAttach_id(dto.getAttachId());
         entity.setAddress(dto.getAddress());
-        entity.setProfile_id(String.valueOf(profile));
+        entity.setProfile_id(profile.getId());
         entity.setPhone(dto.getPhone());
         entity.setCreateDate(LocalDateTime.now());
         merchantRepository.save(entity);
@@ -46,7 +46,7 @@ public class MerchantService {
 
         entity.setPhone(dto.getPhone());
         entity.setAttach_id(dto.getAttachId());
-        entity.setProfile_id(String.valueOf(profile));
+        entity.setProfile_id(profile.getId());
         merchantRepository.save(entity);
         return toDTO(entity);
     }

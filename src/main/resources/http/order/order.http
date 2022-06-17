@@ -1,10 +1,10 @@
 ###
 POST http://localhost:8090/api/v1/order/create
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWRtdXNheWV2QGdtYWlsLmNvbSIsImlhdCI6MTY1NTQ1OTU1MywiZXhwIjoxNjU1NDYzMTUzLCJpc3MiOiJpVGljZXQudXoiLCJyb2xlIjoiQURNSU4ifQ.6Z38yGLZ8Un7BcZ5sMyJV7rkDl1OYP3PwrgLAj7Z44A
 
 {
-  "profileId": "4028ab35815d222101815d23e3ad0000",
-  "product_id": "4028ab35815d1d7d01815d1d9dad0000"
+  "product_id": "8a8a83d2817123620181712758320000"
 }
 
 ###

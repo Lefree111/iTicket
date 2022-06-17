@@ -1,7 +1,7 @@
 ###
 POST http://localhost:8090/api/v1/information/adm/create
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWRtdXNheWV2QGdtYWlsLmNvbSIsImlhdCI6MTY1NTQ0ODk3MiwiZXhwIjoxNjU1NDUyNTcyLCJpc3MiOiJpVGljZXQudXoiLCJyb2xlIjoiQURNSU4ifQ.6aL_fSRfkCMg_n-9RR7VlKooCmpkMO4JY56_u03KKhg
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWRtdXNheWV2QGdtYWlsLmNvbSIsImlhdCI6MTY1NTQ1OTU1MywiZXhwIjoxNjU1NDYzMTUzLCJpc3MiOiJpVGljZXQudXoiLCJyb2xlIjoiQURNSU4ifQ.6Z38yGLZ8Un7BcZ5sMyJV7rkDl1OYP3PwrgLAj7Z44A
 
 {
   "age_limit": "12",
@@ -12,8 +12,9 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWRtdXNheWV2QGdtYWlsLmNvb
 
 
 ###
-POST http://localhost:8090/api/v1/information/update/4028ab35815878f001815879b4010000
+POST http://localhost:8090/api/v1/information/adm/update/8a8a83d2817112330181711722820003
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWRtdXNheWV2QGdtYWlsLmNvbSIsImlhdCI6MTY1NTQ1OTU1MywiZXhwIjoxNjU1NDYzMTUzLCJpc3MiOiJpVGljZXQudXoiLCJyb2xlIjoiQURNSU4ifQ.6Z38yGLZ8Un7BcZ5sMyJV7rkDl1OYP3PwrgLAj7Z44A
 
 {
   "age_limit": "14",
@@ -27,15 +28,19 @@ Content-Type: application/json
 
 
 ###
-GET http://localhost:8090/api/v1/information/getById/8a8a8395815782090181578240720000
+GET http://localhost:8090/api/v1/information/adm/getById/8a8a83d2817112330181711722820003
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWRtdXNheWV2QGdtYWlsLmNvbSIsImlhdCI6MTY1NTQ1OTU1MywiZXhwIjoxNjU1NDYzMTUzLCJpc3MiOiJpVGljZXQudXoiLCJyb2xlIjoiQURNSU4ifQ.6Z38yGLZ8Un7BcZ5sMyJV7rkDl1OYP3PwrgLAj7Z44A
+
 
 <> 2022-06-12T201948.200.json
 
 
 ###
-DELETE http://localhost:8090/api/v1/information/delete/8a8a8395815782090181578240720000
+DELETE http://localhost:8090/api/v1/information/adm/delete/8a8a83d2817112330181711722820003
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWRtdXNheWV2QGdtYWlsLmNvbSIsImlhdCI6MTY1NTQ1OTU1MywiZXhwIjoxNjU1NDYzMTUzLCJpc3MiOiJpVGljZXQudXoiLCJyb2xlIjoiQURNSU4ifQ.6Z38yGLZ8Un7BcZ5sMyJV7rkDl1OYP3PwrgLAj7Z44A
+
 
 <> 2022-06-12T202024.200.txt
 

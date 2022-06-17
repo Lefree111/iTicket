@@ -23,9 +23,10 @@ public class OrderService {
     private final OrderRepository orderRepository;
 
     public OrderDTO create(OrderDTO dto) {
+        ProfileEntity profile = SpringSecurityUtil.getCurrentUser();
 
         OrderEntity entity = new OrderEntity();
-        entity.setProfileId(dto.getProfileId());
+        entity.setProfileId(profile.getId());
         entity.setProduct_id(dto.getProduct_id());
         entity.setCreatedDate(LocalDateTime.now());
 
@@ -54,7 +55,7 @@ public class OrderService {
 
         Pageable pageable = PageRequest.of(page, size, Sort.by(Sort.Direction.DESC, "createdDate"));
 
-        Page<OrderEntity> orderEntitieList = orderRepository.findAllByProfileId(String.valueOf(profile), pageable);
+        Page<OrderEntity> orderEntitieList = orderRepository.findAllByProfileId(profile.getId(), pageable);
 
         List<OrderDTO> orderDTOList = new LinkedList<>();
         orderEntitieList.forEach(orderEntity -> {
