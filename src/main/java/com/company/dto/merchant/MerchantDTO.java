@@ -13,6 +13,7 @@ public class MerchantDTO {
     private String address;
     private String phone;
     private String product_id;
+    private String profile_id;
     private LocalDateTime createDate;
 
 

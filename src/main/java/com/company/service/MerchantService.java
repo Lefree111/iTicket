@@ -2,8 +2,10 @@ package com.company.service;
 
 import com.company.dto.merchant.MerchantDTO;
 import com.company.entity.MerchantEntity;
+import com.company.entity.ProfileEntity;
 import com.company.exc.ItemNotFoundException;
 import com.company.repository.MerchantRepository;
+import com.company.util.SpringSecurityUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +23,7 @@ public class MerchantService {
     }
 
     public MerchantDTO create(MerchantDTO dto) {
+        ProfileEntity profile = SpringSecurityUtil.getCurrentUser();
         Optional<MerchantEntity> optional = merchantRepository.findByAddress(dto.getAddress());
         if (optional.isPresent()){
             throw new ItemNotFoundException("address yaratilgan ");
@@ -28,6 +31,7 @@ public class MerchantService {
         MerchantEntity entity = new MerchantEntity();
         entity.setAttach_id(dto.getAttachId());
         entity.setAddress(dto.getAddress());
+        entity.setProfile_id(String.valueOf(profile));
         entity.setPhone(dto.getPhone());
         entity.setCreateDate(LocalDateTime.now());
         merchantRepository.save(entity);
@@ -35,12 +39,14 @@ public class MerchantService {
     }
 
     public MerchantDTO update(String id, MerchantDTO dto) {
+        ProfileEntity profile = SpringSecurityUtil.getCurrentUser();
         MerchantEntity entity = merchantRepository.findById(id).orElseThrow(() -> {
             throw new ItemNotFoundException("Id not found");
         });
 
         entity.setPhone(dto.getPhone());
         entity.setAttach_id(dto.getAttachId());
+        entity.setProfile_id(String.valueOf(profile));
         merchantRepository.save(entity);
         return toDTO(entity);
     }

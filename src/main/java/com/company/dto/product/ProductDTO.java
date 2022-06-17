@@ -24,6 +24,8 @@ public class ProductDTO {
     private String category_id;
     @NotNull(message = "address qani ??")
     private String address_id;
+    @NotNull(message = "information qani mazgi")
+    private String information_id;
     @NotNull(message = "from_amount qani ??")
     private Double from_amount;
     @NotNull(message = "to_amount qani ??")

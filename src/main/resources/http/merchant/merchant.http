@@ -1,10 +1,12 @@
 ###
-POST http://localhost:8090/api/v1/merchant/create
+POST http://localhost:8090/api/v1/merchant/adm/create
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWRtdXNheWV2QGdtYWlsLmNvbSIsImlhdCI6MTY1NTQ0ODk3MiwiZXhwIjoxNjU1NDUyNTcyLCJpc3MiOiJpVGljZXQudXoiLCJyb2xlIjoiQURNSU4ifQ.6aL_fSRfkCMg_n-9RR7VlKooCmpkMO4JY56_u03KKhg
+
 
 {
-  "attachId": "d698322e-36f5-478e-8ef9-db22e28658e4",
-  "address": "Ashxabot parki",
+  "attachId": "afbf34bd-dac6-4942-89f6-777420affa42",
+  "address": "Humo arena",
   "phone": "+998330041155"
 }
 
@@ -14,34 +16,41 @@ Content-Type: application/json
 
 
 ###
-PUT http://localhost:8090/api/v1/merchant/update/
+PUT http://localhost:8090/api/v1/merchant/adm/update/4028ab1c81707ceb0181707da1b00000
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWRtdXNheWV2QGdtYWlsLmNvbSIsImlhdCI6MTY1NTQ0ODk3MiwiZXhwIjoxNjU1NDUyNTcyLCJpc3MiOiJpVGljZXQudXoiLCJyb2xlIjoiQURNSU4ifQ.6aL_fSRfkCMg_n-9RR7VlKooCmpkMO4JY56_u03KKhg
 
 {
   "phone": "+998905457309",
-  "attachId": "2d6053ee-54aa-4884-94ca-64f3d2a9de00"
+  "attachId": "afbf34bd-dac6-4942-89f6-777420affa42"
 }
 
 <> 2022-06-13T103906.200.json
 
 
 ###
-GET http://localhost:8090/api/v1/merchant/getById/
+GET http://localhost:8090/api/v1/merchant/adm/4028ab1c81707ceb0181707da1b00000
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWRtdXNheWV2QGdtYWlsLmNvbSIsImlhdCI6MTY1NTQ0ODk3MiwiZXhwIjoxNjU1NDUyNTcyLCJpc3MiOiJpVGljZXQudXoiLCJyb2xlIjoiQURNSU4ifQ.6aL_fSRfkCMg_n-9RR7VlKooCmpkMO4JY56_u03KKhg
+
 
 <> 2022-06-13T104235.200.json
 <> 2022-06-13T103957.200.json
 
 
 ###
-GET http://localhost:8090/api/v1/merchant/getByAddress/Humo arena
+GET http://localhost:8090/api/v1/merchant/adm/getByaddress/Humo arena
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWRtdXNheWV2QGdtYWlsLmNvbSIsImlhdCI6MTY1NTQ0ODk3MiwiZXhwIjoxNjU1NDUyNTcyLCJpc3MiOiJpVGljZXQudXoiLCJyb2xlIjoiQURNSU4ifQ.6aL_fSRfkCMg_n-9RR7VlKooCmpkMO4JY56_u03KKhg
+
 
 <> 2022-06-13T104256.200.json
 
 
 ###
-DELETE http://localhost:8090/api/v1/merchant/delete/
+DELETE http://localhost:8090/api/v1/merchant/adm/delete/4028ab1c81707ceb0181707da1b00000
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWRtdXNheWV2QGdtYWlsLmNvbSIsImlhdCI6MTY1NTQ0ODk3MiwiZXhwIjoxNjU1NDUyNTcyLCJpc3MiOiJpVGljZXQudXoiLCJyb2xlIjoiQURNSU4ifQ.6aL_fSRfkCMg_n-9RR7VlKooCmpkMO4JY56_u03KKhg
+
 
 <> 2022-06-13T104312.200.txt

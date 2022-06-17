@@ -40,6 +40,7 @@ public class ProductService {
         entity.setAttach_id(dto.getAttach_id());
         entity.setCategory_id(dto.getCategory_id());
         entity.setAddress_id(dto.getAddress_id());
+        entity.setInformation_id(dto.getInformation_id());
         entity.setDescription(dto.getDescription());
         entity.setDurationDate(dto.getDurationDate());
         entity.setTo_amount(dto.getTo_amount());
@@ -79,6 +80,7 @@ public class ProductService {
         entity.setAttach_id(dto.getAttach_id());
         entity.setCategory_id(dto.getCategory_id());
         entity.setAttach_id(dto.getAddress_id());
+        entity.setInformation_id(dto.getInformation_id());
         entity.setDescription(dto.getDescription());
         entity.setDurationDate(dto.getDurationDate());
         entity.setTo_amount(dto.getTo_amount());
@@ -121,6 +123,7 @@ public class ProductService {
         dto.setName(entity.getName());
         dto.setAttach_id(entity.getAttach_id());
         dto.setAddress_id(entity.getAddress_id());
+        dto.setInformation_id(entity.getInformation_id());
         dto.setDescription(entity.getDescription());
         dto.setCategory_id(entity.getCategory_id());
         dto.setDurationDate(entity.getDurationDate());

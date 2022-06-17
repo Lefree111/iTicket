@@ -25,12 +25,6 @@ public class InformationEntity {
     @Column
     private String back_date;
 
-    @Column(name = "product_id")
-    private String product_id;
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "product_id",insertable = false,updatable = false)
-    private ProductEntity  product;
-
     @Column
     private LocalDateTime createDate;
 }

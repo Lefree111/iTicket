@@ -25,24 +25,6 @@ public class JWTUtil {
         return jwt;
     }
 
-    public static String getIdFromHeader(HttpServletRequest request, ProfileRole... requiredRoles) {
-        try {
-            ProfileJwtDto dto = (ProfileJwtDto) request.getAttribute("ProfileJwtDto");
-            if (requiredRoles == null || requiredRoles.length == 0) {
-                return dto.getEmail();
-            }
-            for (ProfileRole role : requiredRoles) {
-                if (role.equals(dto.getRole())) {
-                    return dto.getEmail();
-
-                }
-            }
-        } catch (RuntimeException e) {
-            throw new TokenNotValidException("Not Authorized");
-        }
-        throw new AppForbiddenException("Not Access");
-    }
-
     public static ProfileJwtDto decode(String jwt) {
         JwtParser jwtParser = Jwts.parser();
 
@@ -56,7 +38,4 @@ public class JWTUtil {
 
         return new ProfileJwtDto(email, ProfileRole.valueOf(role));
     }
-
-
-
 }

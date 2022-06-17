@@ -1,12 +1,14 @@
 ###
 POST http://localhost:8090/api/v1/product/adm/create
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWRtdXNheWV2QGdtYWlsLmNvbSIsImlhdCI6MTY1NTQ0ODk3MiwiZXhwIjoxNjU1NDUyNTcyLCJpc3MiOiJpVGljZXQudXoiLCJyb2xlIjoiQURNSU4ifQ.6aL_fSRfkCMg_n-9RR7VlKooCmpkMO4JY56_u03KKhg
 
 {
   "name": "Humo arena",
-  "attach_id": "d698322e-36f5-478e-8ef9-db22e28658e4",
-  "category_id": "4028ab35815d27d101815d31191d0003",
-  "address_id":"4028ab35815d27d101815d3220170004",
+  "attach_id": "afbf34bd-dac6-4942-89f6-777420affa42",
+  "category_id": "4028ab1c81707ceb018170801cab0002",
+  "address_id":"4028ab1c817071b70181707744c50000",
+  "infotmation_id": "ff808081817089f30181708a7d8b0000",
   "description": "Juda zo'r bo'ladi",
   "durationDate": "2022.06.30",
   "to_amount": "20000",
@@ -16,6 +18,8 @@ Content-Type: application/json
 ###
 PUT http://localhost:8090/api/v1/product/adm/update/8a8a83d2815eb67101815eb77d150000
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWRtdXNheWV2QGdtYWlsLmNvbSIsImlhdCI6MTY1NTQ0ODk3MiwiZXhwIjoxNjU1NDUyNTcyLCJpc3MiOiJpVGljZXQudXoiLCJyb2xlIjoiQURNSU4ifQ.6aL_fSRfkCMg_n-9RR7VlKooCmpkMO4JY56_u03KKhg
+
 
 {
   "name": "",
@@ -29,15 +33,21 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:8090/api/v1/product/adm/getById/8a8a83d2815eb67101815eb77d150000
+GET http://localhost:8090/api/v1/product/adm/getById/4028ab1c81707ceb01817082fc440003
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWRtdXNheWV2QGdtYWlsLmNvbSIsImlhdCI6MTY1NTQ0ODk3MiwiZXhwIjoxNjU1NDUyNTcyLCJpc3MiOiJpVGljZXQudXoiLCJyb2xlIjoiQURNSU4ifQ.6aL_fSRfkCMg_n-9RR7VlKooCmpkMO4JY56_u03KKhg
+
 
 ###
 DELETE http://localhost:8090/api/v1/product/adm/delete/8a8a83d2815eb67101815eb77d150000
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWRtdXNheWV2QGdtYWlsLmNvbSIsImlhdCI6MTY1NTQ0ODk3MiwiZXhwIjoxNjU1NDUyNTcyLCJpc3MiOiJpVGljZXQudXoiLCJyb2xlIjoiQURNSU4ifQ.6aL_fSRfkCMg_n-9RR7VlKooCmpkMO4JY56_u03KKhg
+
 
 ###
 GET http://localhost:8090/api/v1/product/adm/pagination
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWRtdXNheWV2QGdtYWlsLmNvbSIsImlhdCI6MTY1NTQ0ODk3MiwiZXhwIjoxNjU1NDUyNTcyLCJpc3MiOiJpVGljZXQudXoiLCJyb2xlIjoiQURNSU4ifQ.6aL_fSRfkCMg_n-9RR7VlKooCmpkMO4JY56_u03KKhg
+
 
 

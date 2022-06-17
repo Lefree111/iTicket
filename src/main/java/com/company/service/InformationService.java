@@ -3,10 +3,8 @@ package com.company.service;
 
 import com.company.dto.product.InformationDTO;
 import com.company.entity.InformationEntity;
-import com.company.entity.ProfileEntity;
 import com.company.exc.ItemNotFoundException;
 import com.company.repository.InformationRepository;
-import com.company.util.SpringSecurityUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,14 +22,12 @@ public class InformationService {
     }
 
     public InformationDTO create(InformationDTO dto) {
-        ProfileEntity profile = SpringSecurityUtil.getCurrentUser();
 
         InformationEntity entity = new InformationEntity();
         entity.setAge_limit(dto.getAge_limit());
         entity.setLanguage(dto.getLanguage());
         entity.setBack_date(dto.getBack_date_ticket());
         entity.setDuration(dto.getDuration());
-        entity.setProduct_id(String.valueOf(profile));
         entity.setCreateDate(LocalDateTime.now());
         informationRepository.save(entity);
         dto.setId(entity.getId());
@@ -39,12 +35,10 @@ public class InformationService {
     }
 
     public InformationDTO update(String id, InformationDTO dto) {
-        ProfileEntity profile = SpringSecurityUtil.getCurrentUser();
 
         InformationEntity entity = informationRepository.findById(id).orElseThrow(() -> {
             throw new ItemNotFoundException("Id not found");
         });
-        entity.setProduct_id(String.valueOf(profile));
         entity.setLanguage(dto.getLanguage());
         entity.setAge_limit(dto.getAge_limit());
         entity.setBack_date(dto.getBack_date_ticket());
@@ -79,7 +73,6 @@ public class InformationService {
     public InformationDTO toDTO(InformationEntity entity) {
         InformationDTO dto = new InformationDTO();
         dto.setId(entity.getId());
-        dto.setProduct_id(entity.getProduct_id());
         dto.setAge_limit(entity.getAge_limit());
         dto.setLanguage(entity.getLanguage());
         dto.setBack_date_ticket(entity.getBack_date());

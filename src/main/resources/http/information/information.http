@@ -1,7 +1,7 @@
 ###
-POST http://localhost:8090/api/v1/information/create
+POST http://localhost:8090/api/v1/information/adm/create
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWRtdXNheWV2QGdtYWlsLmNvbSIsImlhdCI6MTY1NTQxMzExNCwiZXhwIjoxNjU1NDE2NzE0LCJpc3MiOiJpVGljZXQudXoiLCJyb2xlIjoiQURNSU4ifQ.e73Lz4TKor4LX_32z7ewPz13nxG0HTMGuU3AVZFjx4Y
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWRtdXNheWV2QGdtYWlsLmNvbSIsImlhdCI6MTY1NTQ0ODk3MiwiZXhwIjoxNjU1NDUyNTcyLCJpc3MiOiJpVGljZXQudXoiLCJyb2xlIjoiQURNSU4ifQ.6aL_fSRfkCMg_n-9RR7VlKooCmpkMO4JY56_u03KKhg
 
 {
   "age_limit": "12",

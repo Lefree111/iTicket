@@ -41,6 +41,13 @@ public class ProductEntity {
     @JoinColumn(name = "address_id",insertable = false,updatable = false)
     private MerchantEntity address;
 
+
+    @Column(name = "infotmation_id")
+    private String information_id;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "infotmation_id",insertable = false,updatable = false)
+    private InformationEntity iniformation;
+
     @Column
     private Double from_amount;
     @Column

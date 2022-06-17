@@ -27,5 +27,7 @@ public class MerchantEntity {
     @Column
     private String phone;
     @Column
+    private String profile_id;
+    @Column
     private LocalDateTime createDate;
 }
