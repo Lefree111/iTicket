@@ -120,4 +120,6 @@ public class ProfileService {
     public ProfileEntity get(String id) {
         return profileRepository.findById(id).orElseThrow(() -> new ItemNotFoundException("Not Found!"));
     }
+
+
 }

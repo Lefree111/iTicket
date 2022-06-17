@@ -32,11 +32,11 @@ public class SwaggerConfig {
     }
 
     private ApiInfo apiDetails() {
-        return new ApiInfo("My Super Project iTicket",
-                "Api documentation for project name.",
+        return new ApiInfo("iTicket Project Backend",
+                "Api documentation for iTicket Project Backend.",
                 "1.0",
                 "Beast team.",
-                new springfox.documentation.service.Contact("iTicket", "iTicket", "lefree111@gmail.com"),
+                new springfox.documentation.service.Contact("", "", ""),
                 "",
                 "",
                 Collections.emptyList()

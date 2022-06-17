@@ -18,6 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
 
+import java.time.LocalDateTime;
 import java.util.Optional;
 
 @Service
@@ -32,8 +33,12 @@ public class AuthService {
 
     public void registration(RegistrationDTO dto) {
 
-        Optional<ProfileEntity> optional = profileRepository.findByEmail(dto.getEmail());
-        if (optional.isPresent()) {
+        Optional<ProfileEntity> bir = profileRepository.findByEmail(dto.getEmail());
+        if (bir.isPresent()) {
+            throw new EmailAlreadyExistsExeption("email allaqachon yaratilgan");
+        }
+        Optional<ProfileEntity> ikki = profileRepository.findByPhone(dto.getPhone());
+        if (ikki.isPresent()) {
             throw new EmailAlreadyExistsExeption("email allaqachon yaratilgan");
         }
 
@@ -42,14 +47,17 @@ public class AuthService {
         entity.setSurname(dto.getSurname());
         entity.setEmail(dto.getEmail());
         entity.setPassword(dto.getPassword());
-
+        entity.setPhone(dto.getPhone());
+        entity.setCountry(dto.getCountry());
+        entity.setCreatedDate(LocalDateTime.now());
         entity.setRole(ProfileRole.USER);
         entity.setStatus(ProfileStatus.ACTIVE);
         profileRepository.save(entity);
     }
 
     public ProfileDTO login(AuthDTO dto) {
-        Optional<ProfileEntity> optional = profileRepository.findByEmailAndPassword(dto.getEmail(), dto.getPassword());
+        Optional<ProfileEntity> optional = profileRepository.
+                findByEmailAndPassword(dto.getEmail(), dto.getPassword());
         if (optional.isEmpty()) {
             throw new PasswordOrEmailWrongException("Password or email wrong!");
         }
@@ -62,7 +70,7 @@ public class AuthService {
         ProfileDTO profile = new ProfileDTO();
         profile.setEmail(entity.getEmail());
         profile.setPassword(entity.getPassword());
-        profile.setJwt(JWTUtil.encode(entity.getId(), entity.getRole()));
+        profile.setJwt(JWTUtil.encode(entity.getEmail(), entity.getRole()));
         return profile;
     }
 

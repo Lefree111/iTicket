@@ -3,7 +3,7 @@ POST http://localhost:8090/api/v1/order/create
 Content-Type: application/json
 
 {
-  "profileId": "4028ab35815d27d101815d2b45170001",
+  "profileId": "4028ab35815d222101815d23e3ad0000",
   "product_id": "4028ab35815d1d7d01815d1d9dad0000"
 }
 
@@ -12,7 +12,8 @@ GET http://localhost:8090/api/v1/order/getList
 Content-Type: application/json
 
 
-###
+###orderlarni listini olish uchun profile id bilan narsa create qilish esingdan chiqmasin  agar create qilmagan profile idni bersang ishlmedi
+
 GET http://localhost:8090/api/v1/order/getProfileOrderList
 Content-Type: application/json
-Authorization: Bearer
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI0MDI4YWIzNTgxNWQyMjIxMDE4MTVkMjNlM2FkMDAwMCIsImlhdCI6MTY1NTI3NjQyNiwiZXhwIjoxNjU1MjgwMDI2LCJpc3MiOiJrdW4udXoiLCJyb2xlIjoiVVNFUiJ9.CaYHg9oY3AFrdlol5_AqUvvtREtVYTa_gMM2hclKrZ0

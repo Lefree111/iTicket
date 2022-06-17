@@ -1,35 +1,38 @@
-POST http://localhost:8090/api/v1/profile/create
+###
+POST http://localhost:8090/api/v1/profile/adm/create
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWRtdXNheWV2QGdtYWlsLmNvbSIsImlhdCI6MTY1NTQxMjA0MSwiZXhwIjoxNjU1NDE1NjQxLCJpc3MiOiJpVGljZXQudXoiLCJyb2xlIjoiQURNSU4ifQ.aPuB0LUxvo-p4Mq1cmyvAYT8PFhJ2mSAP--37g_RZOw
 
 {
   "name" : "Holmat",
   "surname" : "Toshmatov",
-  "email" : "tosh@gmail.com",
+  "email" : "wtykjhvcxz@gmail.com",
   "password" : "123432",
-  "phone": "+998901009090",
+  "phone": "+9989011502030",
+  "country": "Ukraina"
+}
+
+
+###
+GET http://localhost:8090/api/v1/profile/adm/pagination
+Content-Type: application/json
+
+
+###
+PUT http://localhost:8090/api/v1/profile/adm/update/8a8a83d2816df8bf01816dfa889f0000
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWRtdXNheWV2QGdtYWlsLmNvbSIsImlhdCI6MTY1NTQxMjA0MSwiZXhwIjoxNjU1NDE1NjQxLCJpc3MiOiJpVGljZXQudXoiLCJyb2xlIjoiQURNSU4ifQ.aPuB0LUxvo-p4Mq1cmyvAYT8PFhJ2mSAP--37g_RZOw
+
+{
+  "name" : "wertyuiop",
+  "surname" : "rtyuiop[",
+  "email" : "ertyuiop[@gmail.com",
+  "password" : "wsedrftyuiop",
+  "phone": "+9989011507485",
   "country": "Ukraina"
 }
 
 ###
-GET http://localhost:8090/api/v1/profile/pagination
+DELETE http://localhost:8090/api/v1/profile/adm/delete/8a8a83d2816e3eef01816e3f7fea0000
 Content-Type: application/json
 
-
-
-###
-PUT http://localhost:8090/api/v1/profile/update/8a8a839581548139018154857daf0000
-Content-Type: application/json
-
-{
-  "name" : "Sarvar",
-  "surname" : "Holmatov",
-  "email" : "sarvargo@gmail.com",
-  "password" : "1234567898765432",
-  "phone": "+998909009090",
-  "country": "AQSH"
-}
-
-
-###
-DELETE http://localhost:8090/api/v1/profile/delete/8a8a8395815496460181549715000001
-Content-Type: application/json

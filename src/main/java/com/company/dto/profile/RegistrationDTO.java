@@ -16,5 +16,6 @@ public class RegistrationDTO {
     private String phone;
     @NotNull(message = "password qani Mazgi")
     private String password;
+    private String country;
 
 }

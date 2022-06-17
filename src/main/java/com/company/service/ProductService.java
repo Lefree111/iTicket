@@ -30,6 +30,11 @@ public class ProductService {
 
     public ProductDTO create(ProductDTO dto) {
 
+        Optional<ProductEntity> bir = productRepository.findByName(dto.getName());
+        if (bir.isPresent()) {
+            throw new ItemNotFoundException("name not found");
+        }
+
         ProductEntity entity = new ProductEntity();
         entity.setName(dto.getName());
         entity.setAttach_id(dto.getAttach_id());

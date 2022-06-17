@@ -13,13 +13,13 @@ public class JWTUtil {
 
     private final static String secretKey = "kalit";
 
-    public static String encode(String id, ProfileRole role) {
+    public static String encode(String email, ProfileRole role) {
         JwtBuilder jwtBuilder = Jwts.builder();
-        jwtBuilder.setSubject(id);
+        jwtBuilder.setSubject(email);
         jwtBuilder.setIssuedAt(new Date());
         jwtBuilder.signWith(SignatureAlgorithm.HS256, secretKey);
         jwtBuilder.setExpiration(new Date(System.currentTimeMillis() + (60 * 60 * 1000)));
-        jwtBuilder.setIssuer("kun.uz");
+        jwtBuilder.setIssuer("iTicet.uz");
         jwtBuilder.claim("role", role);
         String jwt = jwtBuilder.compact();
         return jwt;
@@ -27,13 +27,14 @@ public class JWTUtil {
 
     public static String getIdFromHeader(HttpServletRequest request, ProfileRole... requiredRoles) {
         try {
-            ProfileJwtDto dto = (ProfileJwtDto) request.getAttribute("profileJwtDto");
+            ProfileJwtDto dto = (ProfileJwtDto) request.getAttribute("ProfileJwtDto");
             if (requiredRoles == null || requiredRoles.length == 0) {
-                return dto.getId();
+                return dto.getEmail();
             }
             for (ProfileRole role : requiredRoles) {
                 if (role.equals(dto.getRole())) {
-                    return dto.getId();
+                    return dto.getEmail();
+
                 }
             }
         } catch (RuntimeException e) {
@@ -46,13 +47,14 @@ public class JWTUtil {
         JwtParser jwtParser = Jwts.parser();
 
         jwtParser.setSigningKey(secretKey);
+
         Jws<Claims> jws = jwtParser.parseClaimsJws(jwt);
 
         Claims claims = jws.getBody();
-        String id = claims.getSubject();
+        String email = claims.getSubject();
         String role = String.valueOf(claims.get("role"));
 
-        return new ProfileJwtDto(id, ProfileRole.valueOf(role));
+        return new ProfileJwtDto(email, ProfileRole.valueOf(role));
     }
 
 

@@ -1,30 +1,34 @@
 POST http://localhost:8090/api/v1/attach/upload
 Content-Type: multipart/form-data; boundary=WebAppBoundary
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ3dHlramh2Y3h6QGdtYWlsLmNvbSIsImlhdCI6MTY1NTQxMjczMCwiZXhwIjoxNjU1NDE2MzMwLCJpc3MiOiJpVGljZXQudXoiLCJyb2xlIjoiVVNFUiJ9.9qu6TkZmnXyIuhWlZ6XHsTyBvIDZGYVCQYxNtHwquCo
 
 --WebAppBoundary
-Content-Disposition: form-data; name="file"; filename="hayot.jpg"
+Content-Disposition: form-data; name="file"; filename="photo_2021-12-02_15-27-42.jpg"
 
-< C:\Users\ACER\Desktop\rasm\hayot.jpg
+< C:\Users\ACER\Desktop\photo_2021-12-02_15-27-42.jpg
 --WebAppBoundary--
 
 ###
-
-GET http://localhost:8090/api/v1/attach/open/f1707e57-5b92-4f53-86d7-5a83c432165e
+GET http://localhost:8090/api/v1/attach/open/e4c4a45a-7984-49c6-a05b-39ce7bb0421d
 Content-Type: application/json
-
-###
-GET http://localhost:8090/api/v1/attach/open_general/8d160025-b96b-45ac-8fc4-29c7cee3d950
-Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ3dHlramh2Y3h6QGdtYWlsLmNvbSIsImlhdCI6MTY1NTQxMjczMCwiZXhwIjoxNjU1NDE2MzMwLCJpc3MiOiJpVGljZXQudXoiLCJyb2xlIjoiVVNFUiJ9.9qu6TkZmnXyIuhWlZ6XHsTyBvIDZGYVCQYxNtHwquCo
 
 ###
-GET http://localhost:8090/api/v1/attach/download/8d160025-b96b-45ac-8fc4-29c7cee3d950
+GET http://localhost:8090/api/v1/attach/open_general/e4c4a45a-7984-49c6-a05b-39ce7bb0421d
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ3dHlramh2Y3h6QGdtYWlsLmNvbSIsImlhdCI6MTY1NTQxMjczMCwiZXhwIjoxNjU1NDE2MzMwLCJpc3MiOiJpVGljZXQudXoiLCJyb2xlIjoiVVNFUiJ9.9qu6TkZmnXyIuhWlZ6XHsTyBvIDZGYVCQYxNtHwquCo
+
+###
+GET http://localhost:8090/api/v1/attach/download/e4c4a45a-7984-49c6-a05b-39ce7bb0421d
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ3dHlramh2Y3h6QGdtYWlsLmNvbSIsImlhdCI6MTY1NTQxMjczMCwiZXhwIjoxNjU1NDE2MzMwLCJpc3MiOiJpVGljZXQudXoiLCJyb2xlIjoiVVNFUiJ9.9qu6TkZmnXyIuhWlZ6XHsTyBvIDZGYVCQYxNtHwquCo
 
 ###
 GET http://localhost:8090/api/v1/attach/list
 Content-Type: application/json
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ3dHlramh2Y3h6QGdtYWlsLmNvbSIsImlhdCI6MTY1NTQxMjczMCwiZXhwIjoxNjU1NDE2MzMwLCJpc3MiOiJpVGljZXQudXoiLCJyb2xlIjoiVVNFUiJ9.9qu6TkZmnXyIuhWlZ6XHsTyBvIDZGYVCQYxNtHwquCo
 
 ###
-DELETE http://localhost:8090/api/v1/attach/delete/8d160025-b96b-45ac-8fc4-29c7cee3d950
+DELETE http://localhost:8090/api/v1/attach/delete/e4c4a45a-7984-49c6-a05b-39ce7bb0421d
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ3dHlramh2Y3h6QGdtYWlsLmNvbSIsImlhdCI6MTY1NTQxMjczMCwiZXhwIjoxNjU1NDE2MzMwLCJpc3MiOiJpVGljZXQudXoiLCJyb2xlIjoiVVNFUiJ9.9qu6TkZmnXyIuhWlZ6XHsTyBvIDZGYVCQYxNtHwquCo

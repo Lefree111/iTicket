@@ -2,7 +2,9 @@ package com.company.service;
 
 import com.company.dto.order.OrderDTO;
 import com.company.entity.OrderEntity;
+import com.company.entity.ProfileEntity;
 import com.company.repository.OrderRepository;
+import com.company.util.SpringSecurityUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -19,7 +21,6 @@ import java.util.List;
 public class OrderService {
 
     private final OrderRepository orderRepository;
-
 
     public OrderDTO create(OrderDTO dto) {
 
@@ -48,10 +49,12 @@ public class OrderService {
         return orderDTOList;
     }
 
-    public List<OrderDTO> getProfileOrderList(String profileId, int page, int size) {
+    public List<OrderDTO> getProfileOrderList(int page, int size) {
+        ProfileEntity profile = SpringSecurityUtil.getCurrentUser();
+
         Pageable pageable = PageRequest.of(page, size, Sort.by(Sort.Direction.DESC, "createdDate"));
 
-        Page<OrderEntity> orderEntitieList = orderRepository.findAllByProfileId(profileId, pageable);
+        Page<OrderEntity> orderEntitieList = orderRepository.findAllByProfileId(String.valueOf(profile), pageable);
 
         List<OrderDTO> orderDTOList = new LinkedList<>();
         orderEntitieList.forEach(orderEntity -> {

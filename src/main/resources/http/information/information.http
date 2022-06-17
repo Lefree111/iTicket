@@ -1,13 +1,13 @@
 ###
 POST http://localhost:8090/api/v1/information/create
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWRtdXNheWV2QGdtYWlsLmNvbSIsImlhdCI6MTY1NTQxMzExNCwiZXhwIjoxNjU1NDE2NzE0LCJpc3MiOiJpVGljZXQudXoiLCJyb2xlIjoiQURNSU4ifQ.e73Lz4TKor4LX_32z7ewPz13nxG0HTMGuU3AVZFjx4Y
 
 {
   "age_limit": "12",
   "language": "uzbek",
   "duration": "01.07.2022",
-  "back_date_ticket": "20.07.2022",
-  "product_id": "8a8a8395815565510181556ab1770000"
+  "back_date_ticket": "20.07.2022"
 }
 
 

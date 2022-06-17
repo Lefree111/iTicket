@@ -1,28 +1,35 @@
-POST http://localhost:8090/api/v1/category/create
+POST http://localhost:8090/api/v1/category/adm
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWRtdXNheWV2QGdtYWlsLmNvbSIsImlhdCI6MTY1NTQxMzExNCwiZXhwIjoxNjU1NDE2NzE0LCJpc3MiOiJpVGljZXQudXoiLCJyb2xlIjoiQURNSU4ifQ.e73Lz4TKor4LX_32z7ewPz13nxG0HTMGuU3AVZFjx4Y
 
 {
-  "key" : "ertyuio",
+  "key" : "dfghjhgfds",
   "name_uz" : "dfghjkl;",
   "name_ru" : "dfghjk",
   "name_en" : "xcvbnm,."
 }
 
 ###
-GET http://localhost:8090/api/v1/category/getById/8a8a83958152db97018152e6b6050002
+GET http://localhost:8090/api/v1/category/adm/8a8a83d2816e463c01816e4fe4010000
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWRtdXNheWV2QGdtYWlsLmNvbSIsImlhdCI6MTY1NTQxMzExNCwiZXhwIjoxNjU1NDE2NzE0LCJpc3MiOiJpVGljZXQudXoiLCJyb2xlIjoiQURNSU4ifQ.e73Lz4TKor4LX_32z7ewPz13nxG0HTMGuU3AVZFjx4Y
+
 
 ###
-PUT http://localhost:8090/api/v1/category/update/8a8a83958152db97018152e6b6050002
+PUT http://localhost:8090/api/v1/category/adm/8a8a83d2816e463c01816e4fe4010000
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWRtdXNheWV2QGdtYWlsLmNvbSIsImlhdCI6MTY1NTQxMzExNCwiZXhwIjoxNjU1NDE2NzE0LCJpc3MiOiJpVGljZXQudXoiLCJyb2xlIjoiQURNSU4ifQ.e73Lz4TKor4LX_32z7ewPz13nxG0HTMGuU3AVZFjx4Y
 
 {
-  "key" : "qwertyuil",
+  "key" : "vsdacqevfadsqevfas",
   "name_uz" : "Iqtisodiyot",
   "name_ru" : "Экономика",
   "name_en" : "Economics"
 }
 
 ###
-DELETE http://localhost:8090/api/v1/category/delete/8a8a839581548139018154871ccf0001
+DELETE http://localhost:8090/api/v1/category/adm/8a8a83d2816e463c01816e4fe4010000
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWRtdXNheWV2QGdtYWlsLmNvbSIsImlhdCI6MTY1NTQxMzExNCwiZXhwIjoxNjU1NDE2NzE0LCJpc3MiOiJpVGljZXQudXoiLCJyb2xlIjoiQURNSU4ifQ.e73Lz4TKor4LX_32z7ewPz13nxG0HTMGuU3AVZFjx4Y
+
+<> 2022-06-17T020609.200.txt

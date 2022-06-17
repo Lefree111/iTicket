@@ -25,6 +25,8 @@ public class CategoryEntity {
     @Column
     private String key;
     @Column
+    private String profileId;
+    @Column
     private LocalDateTime createDate;
     @Column
     private LocalDateTime updateDate;

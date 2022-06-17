@@ -13,8 +13,8 @@ import javax.validation.constraints.NotNull;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProfileJwtDto {
-    @NotNull(message = "Id null ku mazgi")
-    private String id;
+    @NotNull(message = "email null ku mazgi")
+    private String email;
     @NotNull(message = "role null ku mazgi")
     private ProfileRole role;
 }

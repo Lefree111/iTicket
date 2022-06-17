@@ -1,10 +1,12 @@
 POST http://localhost:8090/api/v1/auth/login
 Content-Type:  application/json
 
+
 {
-  "email": "tosh@gmail.com",
-  "password": "123432"
+  "email": "madmusayev@gmail.com",
+  "password": "wsedrftyuiop"
 }
+
 
 
 ###
@@ -14,6 +16,8 @@ Content-Type:  application/json
 {
   "name": "Abdulbori",
   "surname": "Madmusayev",
-  "email": "matmusayevabdulbori60@gmail.com",
-  "password": "12345"
+  "email": "madmusayev@gmail.com",
+  "password": "12345",
+  "phone": "+998999008081",
+  "country": "UZBEK"
 }

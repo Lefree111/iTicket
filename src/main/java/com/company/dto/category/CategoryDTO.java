@@ -20,6 +20,7 @@ public class CategoryDTO {
     private String name_uz;
     @NotNull(message = "key bo'sh qolmasin ")
     private String key;
+    private String profileId;
     private LocalDateTime createDate;
     private LocalDateTime updateDate;
 
