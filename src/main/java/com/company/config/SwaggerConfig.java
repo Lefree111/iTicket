@@ -1,5 +1,6 @@
 package com.company.config;
 
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
@@ -16,6 +17,8 @@ import java.util.Set;
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {
+
+
     @Bean
     public Docket swaggerConfiguration() {
 
@@ -31,11 +34,12 @@ public class SwaggerConfig {
                 .apiInfo(apiDetails());
     }
 
+
     private ApiInfo apiDetails() {
-        return new ApiInfo("iTicket Project Backend",
-                "Api documentation for iTicket Project Backend.",
+        return new ApiInfo("iTicket ",
+                "Api documentation for iTicket Project",
                 "1.0",
-                "Beast team.",
+                "Service",
                 new springfox.documentation.service.Contact("", "", ""),
                 "",
                 "",
